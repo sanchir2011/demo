@@ -12,8 +12,11 @@ export default function Home() {
         <a href="/image" className="w-full bg-zinc-900 rounded-xl p-4 font-semibold font-sans cursor-pointer">
           Part 2. Зураг оруулж таниулах
         </a>
+        <a href="/audio" className="w-full bg-zinc-900 rounded-xl p-4 font-semibold font-sans cursor-pointer">
+          Part 3. Яриа орчуулах
+        </a>
         <a href="/email" className="w-full bg-zinc-900 rounded-xl p-4 font-semibold font-sans cursor-pointer">
-          Part 3. Имэйлд хариу бичигч
+          Part 4. Имэйлд хариу бичигч
         </a>
       </div>
     </div>
