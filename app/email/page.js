@@ -17,15 +17,18 @@ export default function EmailReply() {
   const [loading, setLoading] = useState(false);
 
   const handleGeneration = async () => {
-    if (!content) return toast.error("Чиглэл оруулна уу");
     setLoading(true);
-    const result = await replyToEmail(content);
-    setLoading(false);
-    if (result) {
-      setOutput(result);
-    } else {
-      toast.error("Ямар нэгэн алдаа гарлаа");
-    }
+    await fetch('/api/completion', {
+      method: 'POST',
+      body: JSON.stringify({
+        prompt: content,
+      }),
+    }).then(response => {
+      response.json().then(json => {
+        setOutput(json.text);
+        setLoading(false);
+      });
+    });
   }
 
   return (
